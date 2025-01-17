@@ -19,10 +19,10 @@ Soil is a general-purpose, register-based instruction set and bytecode.
 
 == Preliminaries <prelims>
 
-Soil uses two types of integer values. *Bytes* are 8 bits and *words* are 64 bits.
+Soil uses two types of integer values. *Bytes* are 8 bits and *words* are 32 bits.
 All integers are encoded as little-endian.
 
-Floating point values in the Soil VM are 64-bit values according to IEEE-754.
+Floating point values in the Soil VM are 32-bit values according to IEEE-754.
 
 Strings are encoded as UTF-8 and never null-terminated.
 
@@ -155,7 +155,7 @@ Soil supports the following instructions:
 [`moveib`], [0xd2], [`to:reg`], [`value:word`], [Sets `to` to `from`.],
 [`load`], [0xd3], [`to:reg`], [`from:reg`], [Interprets `from` as an address and sets `to` to the word at that address in memory.],
 [`loadb`], [0xd4], [`to:reg`], [`from:reg`], [Interprets `from` as an address and sets `to` to the byte at that address in memory.],
-[`store`], [0xd5], [`to:reg`], [`from:reg`], [Interprets `to` as an address and sets the 64 bits at that address in memory to `from`.],
+[`store`], [0xd5], [`to:reg`], [`from:reg`], [Interprets `to` as an address and sets the 32 bits at that address in memory to `from`.],
 [`storeb`], [0xd6], [`to:reg`], [`from:reg`], [Interprets `to` as an address and sets the 8 bits at that address in memory to `from`.],
 [`push`], [0xd7], [`reg:reg`], [-], [Decreases `sp` by 8, then runs `store sp reg`.],
 [`pop`], [0xd8], [`reg:reg`], [-], [Runs `load reg sp`, then increases `sp` by 8.],
